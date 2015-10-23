@@ -1,21 +1,3 @@
-/*
-
-	Whack-A-Mole v0
-	copyright 2010 Christopher Scott Hernandez
-
-	JavaScript/HTML game written as a challenge by my friend Rob Allen at work.
-	
-	This document is licensed as free software under the terms of the
-	MIT License: http://www.opensource.org/licenses/mit-license.php 
-	
-*/
-
-
-
-// our one global
-// ...thought about doing it like jquery
-// what with the whole window.whackamole = whackamole bit, but... 
-// i dunno... i like this better.. and i have to be different... :)
 var whackamole = whackamole || (function(window, undefined) {
 	
 	// booleans, ints, and timers oh my!
@@ -154,11 +136,6 @@ var whackamole = whackamole || (function(window, undefined) {
 		
 	}
 	
-	// at first I was calling this "loop", but it wasn't really a loop
-	// but more like a controller for the game, that various
-	// objects would call to "step" the game forward
-	// this could probably be refactored into something much more elegant
-	// ...maybe for a rainy day...
 	function step() {
 		switch(game.mode) {
 			case "start":
@@ -192,12 +169,6 @@ var whackamole = whackamole || (function(window, undefined) {
 		}
 	}
 	
-	// public interface
-	// not really sure I need anything but "setup"
-	// but it just seems any self respecting game should at least
-	// have a few helpful public methods... i dunno... 
-	// if the game got bigger...maybe it would make more sense...
-	// anyhow...
 	return {
 		setup: function(element) {
 			setup(element);
